@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>      <!-- Jan 10 2022 added UDS Port -->
+<Setup>
+	<xml_ver value="XML_ver 2022.01.10.V1.3"/>
+	<xml_sho value="false"/>     <!-- true shows the setup process on the command promp scren.  -->
+	
+    <ADC_Set>
+       <SampRate value="48000"/> <!-- Must be value supported by sound board -->
+   </ADC_Set>                   <!-- All Filter Freq < (SampRate / 4) -->
+                                <!-- All Filter Freq > 0 -->
+    <RefGen>
+        <Freq value="520.0"/>   <!-- in Hz. Avoid power line harmonics. -->
+        <Slew value="0.1"/>     <!-- part of cycle lost to slew limiting -->
+        <Level value="0.1"/>    <!-- 1.00 = full scale out. -->
+    </RefGen>
+
+    <RefIn>
+        <HPF value="20.0"/>     <!-- in Hz. Use 20.0 Hz for sound board-->
+        <LPF value="10000"/>    <!-- in Hz. -->
+        <Phase value="25.0"/>   <!-- Degrees at XFreq.  Really time delay -->
+        <XFreq value="0.0"/>    <!-- if XFreq = 0.0, will use RefGen Freq -->
+    </RefIn>
+
+    <SigIn>                     <!-- all values in Hz. -->
+        <HPF value="20.0"/>     <!-- 20.0 Hz minimum. -->
+        <LPF value="8000"/>     <!-- comp for lo pass pole in Rec Audio. -->
+        <LP_Comp value="584.0"/>    <!-- Both LP_Comp = 5000 to bypass. -->
+        <LP_Comp_BK value="5000.0"/>  <!-- comp for hi pass pole in Rec video. -->
+        <HP_Comp value="541.0"/>    <!-- Both HP_Comp = 10 to bypass. -->
+        <HP_Comp_BK value="10.0"/>
+    </SigIn>
+
+    <SigOut>
+        <LPF value="0.025"/>     <!-- in Hz. -->
+        <Scale value="1.00"/>    <!-- 1.00 give +/- 32768 full scale out -->
+    </SigOut>
+
+    <Clock>
+        <timing value="2"/>      <!-- Seconds between file updates -->
+    </Clock>
+
+    <OutFile>
+        <Header value="false"/>   <!-- true is header for Meas Computing File -->
+    </OutFile>
+
+    <UDS_Port>
+		<IP_Address value="127.0.0.1"/>
+ 		<port_Number value="2345"/>      <!-- port address for UDS -->
+    </UDS_Port>
+</Setup>
+

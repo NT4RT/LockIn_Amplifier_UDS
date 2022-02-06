@@ -1,0 +1,5 @@
+USB-500 Log File,,,,,ConversionTable:,,
+Name: RadTel_2,,,,,Index,mA,%
+Model: USB-504,,,,,1,0.00000,0.00000
+Serial Number: 7104,,,,,2,20.00000,100.00000
+Index, Date/Time, Current(%)
