@@ -56,7 +56,7 @@
  *      We must estblish a "Socket' connection for RSP to use.
  *      
  * Jan 7, 2022.  This version with the Radio SkyPipe UDS via TCP is working. ^ at UDS transfer.
- *      LI_config.xml must be version with new TCP IP parameters.
+ *      LI_config.xml must be version with new TCP IP parameters included.
  * 
 **************************************************************************************************/
 using System;                       // these namespaces can NOT contain common class names. 
@@ -72,7 +72,7 @@ using SignalWave_In;
 using UDS_Server;
 using Setup;
 
-namespace Lockin_Amplifier1         // Note that this DOES NOT match the file name per custom !!!
+namespace Lockin_Amplifier1         // Note that this DOES NOT match the file name per tradition !!!
 {
     class Program
     {
@@ -83,8 +83,8 @@ namespace Lockin_Amplifier1         // Note that this DOES NOT match the file na
 // *********************** Start of Main Programme ***********************************************
         static void Main(string[] args)         // args could have outfile name??? not used now. 
         {
-            Console.WriteLine("  Lock-In Amplifier for Radio Telescope ");
-            Console.WriteLine("             Bruce Randall  NT4RT  Version 2021_Dec_29 ");       // fix date ####
+            Console.WriteLine("  Lock-In Amplifier for Radio Telescope   ...  With Radio Skypipe Interface");
+            Console.WriteLine("             Bruce Randall  NT4RT  Version 2022_Mar_22 ");  
             Console.WriteLine();
             Console.WriteLine(" WARNING: Disconnect Sound Speakers before proceeding!!!!!!!");
             Console.WriteLine();
